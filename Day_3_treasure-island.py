@@ -22,22 +22,20 @@ ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
 ''')
 print("Welcome to Treasure Island.")
 print("Your mission is to find the treasure.") 
- 
-choice1 = input("you are at a cross road. where do you want to go? type 'left' or 'right'" ).lower()
-if choice1 == 'left':
-    choice2 = input('you come to a lake. there is an island in the middle if the laek. tye "wait" or "swim" to swim across ').lower()
-    if choice2 == 'wait':
-        choice3 = input('you arrive at this land unharmed. there is a house with 3 doors. one red, one yellow, one blue, which colour do choose?' ).lower()
-        if choice3 == 'red':
-            print('burned by a fire')
-        elif choice3 == 'blue':
-            print('eaten by beast')
-        elif choice3 == 'yellow':
+user_choice = input ('left or right')
+if user_choice == "left":
+    user_choice1 = input("swim or wait")
+    if user_choice1 == 'wait':
+        user_choice2 = input('Choose from red, yellow or blue')
+        if user_choice2 == 'red':
+            print('Burned by fire. Game Over!')
+        elif user_choice2 == 'blue':
+            print('Eaten by beast. Game Over!')
+        elif user_choice2 == 'yellow':
             print('you win')
         else:
-            print('game over')
+            print('Game Over!')
     else:
-        print('attacked by trout')
+        print('Attacked by trout. Game Over!')
 else:
-    print('fall into a hole')
-    
+    print('Fall into a hole. Game Over!')
