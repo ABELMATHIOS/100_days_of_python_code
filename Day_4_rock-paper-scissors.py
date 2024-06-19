@@ -25,41 +25,29 @@ scissors = '''
 ---.__(___)
 '''
 import random
-print("what do you choose? Type 0 for rock, 1 paper, 2 for scissors.")
 choice = [rock, paper, scissors]
-p1 = int(input())
-if p1 >= 3 or p1 < 0:
+
+user_choice = int(input('What do you choose? Type 0 for Rock, 1 for paper or 2 for scissors.\n'))
+if user_choice >= 3 or user_choice <= 0:
     print('invalid number')
-else:
-    print(choice[p1])
-    cc =(random.randint(0,2))
-    print('comupter choose:')
-    print(choice[cc])
+else:  
+    print(choice[user_choice])
+    computer_choice = random.randint(0,2)
+    print(f'computer choose {computer_choice}')
+    print(choice[computer_choice])
 
-
-    if p1 == 0 and cc == 1:
-        print('computer win!')
-    elif p1 == 1 and cc == 0:
-        print('you win!')
-    elif p1 == 0 and cc == 2:
-        print('you win!')
-    elif p1 == 2 and cc == 0:
-        print('computer win!')
-    elif p1 == 2 and cc == 1:
-        print('you win!')
-    elif p1 == 1 and cc == 2:
-        print('computer win!')
-    elif p1 == cc:
-        print('draw')
-
-    else:
-        print('you have entered a wrong number')
-
-
-
-
-
-
-
-
+    if user_choice == 0 and computer_choice == 1:
+        print('You lose!')
+    elif user_choice == 1 and computer_choice == 0:
+        print('You win!')
+    elif user_choice == 0 and computer_choice == 2:
+        print('You win!')
+    elif user_choice == 2 and computer_choice == 0:
+        print('You lose!')
+    elif user_choice == 1 and computer_choice == 2:
+        print('You lose!')
+    elif user_choice == 2 and computer_choice == 1:
+        print('You win!')
+    elif user_choice ==  computer_choice:
+        print('draw!')
 
