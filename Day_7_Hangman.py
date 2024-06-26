@@ -1,89 +1,38 @@
 import random
-stages = ['''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-''']
-word_list = ["aardvark", "baboon", "camel"]
-chosen_word = random.choice(word_list)
+import os
+from  hangman_art import logo, stages
+from hangman_words import word_list
 
-#Testing code
-print(f'Pssst, the solution is {chosen_word}.')
+random_choice = random.choice(word_list)
+print(random_choice)
+display = []
+for i in range(len(random_choice)):
+  display += "_"
+lives = 6
+a = 3
+print(logo)
+while a > 1:
+  guess = input("Guess a letter: ").lower()
+  os.system('cls')
+  if guess in display:
+    print(f"You've already guessed the letter {guess}.")
+  for i in range(len(random_choice)):
+    letter = random_choice[i]
+    if letter == guess:
+      display[i] = letter
+  if guess not in random_choice:
+    print(f"You guessed {guess}, that's not in the word. You lose a life.")
+    lives -= 1
+    if lives == 0:
+      a = 0
+      print('You lose!')
 
-#TODO-1: - Create an empty List called display.
-#For each letter in the chosen_word, add a "_" to 'display'.
-#So if the chosen_word was "apple", display should be ["_", "_", "_", "_", "_"] with 5 "_" representing each letter to guess.
-live = 6
-dispaly = []
-for i in range(len(chosen_word)):
-    dispaly += "_"
-while "_" in dispaly:
-    guess = input("Guess a letter: ").lower()
-    
+  if "_" not in display:
+    a = 0
+    print("You win!")
 
-    for i in range(len(chosen_word)): 
-        if chosen_word[i] == guess:
-            dispaly[i] = guess
-    
-    print(dispaly)
-    if guess not in chosen_word:
-        live -= 1
-        if live == 0:
-            break
-            print('you lose')
-    else:
-        print('you won!')
-
-
-
+  
+  string = ''.join(display)
+  print(string)
+   
+  print(stages[lives]) 
