@@ -13,11 +13,12 @@ while  end_of_bid:
     system('cls')
     if new_bidder == 'no':
         end_of_bid = False
+
 val = 0
 for item in bidder:
-    x = bidder[item]
-    if x > val:
-        val = x
+    bid_num = bidder[item]
+    if bid_num > val:
+        val = bid_num
 print(f'The winner is {name} with a bid of ${bid}.')
 
 
