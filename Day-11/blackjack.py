@@ -2,7 +2,6 @@ import random
 import art
 import os
 def play_again():
-    print(art.logo)
     def deal_card():
         cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
         return random.choice(cards)
@@ -60,8 +59,17 @@ def play_again():
     print(f"Your final hand {user_cards}, final score {user_score}. ")
     print(f"Computer final hand {computer_cards}, final score {computer_score}.")
     print(compare())
-    ask = input("Would like to play again type 'y' to play or type 'n' to exit. ")
-    if ask == 'y':
+    ask2 = input("Do you want to play blackjack game again type 'y' to play or type any key to exit. ")
+    if ask2 == 'y':
         os.system('cls')
+        print(art.logo)
+
         play_again()
-play_again()
+        
+        
+ask = input("Do you want to play blackjack game  type 'y' to play or type any key to exit. ")
+if ask == 'y':
+    print(art.logo)
+    play_again()
+
+
