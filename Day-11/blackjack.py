@@ -32,7 +32,7 @@ def play_again():
         if computer_score == 0 or user_score == 0 or user_score > 21:
             is_game_over = True
         else:
-            add_card = input("type 'y' to draw another card or type 'n' to exit.")
+            add_card = input("type 'y' to draw another card or type any key to exit. ")
             if add_card == 'y':
                 user_cards.append(deal_card())
             else:
