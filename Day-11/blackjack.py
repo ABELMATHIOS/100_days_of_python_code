@@ -1,6 +1,7 @@
 import random
 import art
 import os
+
 def play_again():
     def deal_card():
         cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
@@ -32,7 +33,7 @@ def play_again():
         if computer_score == 0 or user_score == 0 or user_score > 21:
             is_game_over = True
         else:
-            add_card = input("type 'y' to draw another card or type any key to exit. ")
+            add_card = input("Type 'y' to draw another card or type any key to exit. ")
             if add_card == 'y':
                 user_cards.append(deal_card())
             else:
@@ -59,14 +60,13 @@ def play_again():
     print(f"Your final hand {user_cards}, final score {user_score}. ")
     print(f"Computer final hand {computer_cards}, final score {computer_score}.")
     print(compare())
-    ask2 = input("Do you want to play blackjack game again type 'y' to play or type any key to exit. ")
+    ask2 = input("Do you want to play blackjack game again, Type 'y' to play or type any key to exit. ")
     if ask2 == 'y':
         os.system('cls')
         print(art.logo)
 
         play_again()
-        
-        
+             
 ask = input("Do you want to play blackjack game  type 'y' to play or type any key to exit. ")
 if ask == 'y':
     print(art.logo)
