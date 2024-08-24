@@ -1,9 +1,11 @@
-number = int(input('enter a number'))
-def is_prime(num):
-    if num % num == 0 and num % 1 == 0:
-        return True
+def is_leap(year):
+    if year % 4 == 0:
+        if year % 100 == 0:
+            if year % 4000 == 0:
+                return True
+            else:
+                return False
+        else:
+            return True
     else:
         return False
-        
-
-print(is_prime(number))

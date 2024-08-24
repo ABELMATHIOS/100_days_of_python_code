@@ -9,17 +9,17 @@ print("I'am thinking of a number between 1 and 100.")
 difficulty =  input("Choose difficulty. Type 'easy' or 'hard' ")
 rand_num = random.randint(1, 100)
 def game():
-    def number_guessing(gnum, rand_num, turns):
-        if gnum < rand_num:
+    def number_guessing(guess, rand_num, turns):
+        if guess < rand_num:
             print('Too low.')
             turns = turns - 1
             return turns
-        elif gnum > rand_num:
+        elif guess > rand_num:
             print('Too high')
             returns = turns - 1
             return turns
-        elif gnum == rand_num:
-            print(f'You got it! The answer was {gnum}')
+        elif guess == rand_num:
+            print(f'You got it! The answer was {guess}')
         return turns
    
     def set_difficulty():
