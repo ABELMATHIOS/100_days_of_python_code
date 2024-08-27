@@ -30,12 +30,12 @@ def game():
             turns = HARD_LEVEL
             return turns
     turns = set_difficulty()
-    gnum = 0  
-    while gnum != rand_num:
+    guess = 0  
+    while guess != rand_num:
         print(f"You have {turns} attempts remaining to guess the number.")
     
-        gnum = int(input('Make a guess: '))
-        turns = number_guessing(gnum,rand_num,turns)
+        guess = int(input('Make a guess: '))
+        turns = number_guessing(guess,rand_num,turns)
         if turns == 0:
             print('You are out of guesses, You lose')
             return
